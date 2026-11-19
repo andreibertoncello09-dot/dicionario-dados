@@ -1,0 +1,39 @@
+:root{--red:#FF0000;--yellow:#FFFF00;--white:#FFFFFF;--bg:#FFFFFF;--surface:#F7F4F4;--text:#1d1a1a;--muted:#6b6262;--line:#e4dcdc;--accent:#C40000;--code:#1d1f21;--top:#FF0000;--topfg:#FFFFFF;--dp-bg:#FFFF00;--dp-fg:#3a3500;--na-bg:#d4f0d9;--na-fg:#0e4a1d;--dps-bg:#FF0000;--dps-fg:#fff}
+:root[data-theme=dark]{--bg:#141112;--surface:#201b1c;--text:#f2ecec;--muted:#b3a8a8;--line:#3a3233;--accent:#ff6a6a;--top:#8f0000;--na-bg:#17391f;--na-fg:#b8f0c4;--dp-bg:#FFFF00;--dp-fg:#2b2800}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+code,pre{font-family:"Fira Code","JetBrains Mono",Consolas,monospace}
+.topbar{position:fixed;inset:0 0 auto 0;height:60px;background:var(--top);color:var(--topfg);display:flex;align-items:center;gap:14px;padding:0 18px;border-bottom:4px solid var(--yellow);z-index:30}
+.brand{display:flex;flex-direction:column;flex:1;line-height:1.2}.brand strong{font-size:1.15rem}.brand span{font-size:.8rem;opacity:.92}
+.btn{background:var(--red);color:#fff;border:2px solid var(--red);padding:8px 14px;border-radius:6px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{background:#c40000}.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.topbar .btn.ghost:hover{background:rgba(255,255,255,.15)}.icon{display:none;background:none;border:2px solid #fff;color:#fff;border-radius:6px;padding:6px 10px;font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid #0b57d0;outline-offset:2px}
+.layout{display:flex;padding-top:60px}
+#sidebar{position:sticky;top:60px;align-self:flex-start;width:270px;height:calc(100vh - 60px);overflow:auto;background:var(--surface);border-right:1px solid var(--line);padding:14px}
+.navh{margin:0 0 8px;font-weight:700}#navList{list-style:none;margin:0;padding:0}
+#navList a{display:block;padding:5px 8px;border-radius:5px;color:var(--text);text-decoration:none;font:.85rem "Fira Code",Consolas,monospace}
+#navList a:hover,#navList a.on{background:var(--yellow);color:#000}
+main{flex:1;min-width:0;padding:24px clamp(14px,3vw,36px) 60px}
+h2{margin:0 0 10px;font-size:1.5rem}h3{margin:0 0 6px;font-size:1.2rem}h3 code{color:var(--accent)}
+.ident,.panel{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--red);border-radius:8px;padding:18px 22px;margin-bottom:20px}
+.resp{margin:0;padding-left:20px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+#search{width:100%;padding:11px 14px;border:2px solid var(--line);border-radius:6px;background:var(--bg);color:var(--text);font:inherit}#search:focus{border-color:var(--red)}
+.muted{color:var(--muted);margin:8px 0 0}.legend{font-size:.85rem;color:var(--muted);margin:10px 0 0}
+.tbl{margin:0 0 34px}.purpose{margin:0 0 10px;color:var(--muted);max-width:80ch}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:980px;font-size:.84rem}
+th{background:var(--red);color:#fff;text-align:left;padding:9px 10px;position:sticky;top:0}
+td{padding:9px 10px;border-top:1px solid var(--line);vertical-align:top}tr:nth-child(even) td{background:var(--surface)}
+.cons{font-weight:700;font-size:.78rem;color:var(--accent)}
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-weight:700;font-size:.78rem}
+.b-dp{background:var(--dp-bg);color:var(--dp-fg);outline:1px solid #b8a800}.b-na{background:var(--na-bg);color:var(--na-fg)}.b-dps{background:var(--dps-bg);color:var(--dps-fg)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:50;display:flex;align-items:center;justify-content:center;padding:3vh 3vw}.modal[hidden]{display:none}
+.mbox{background:var(--bg);color:var(--text);border-radius:10px;width:min(1100px,100%);max-height:94vh;display:flex;flex-direction:column;overflow:hidden;border-top:5px solid var(--red)}
+.mbox.full{width:100%;height:94vh}.mbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 14px;border-bottom:1px solid var(--line)}
+.stage{flex:1;overflow:hidden;background:#1f1f2b;cursor:grab;touch-action:none}.stage:active{cursor:grabbing}
+.stage img{display:block;width:100%;height:auto;max-width:none;user-select:none}
+pre.code{margin:0;border-radius:0;max-height:70vh;overflow:auto;font-size:.82rem}pre.code code{font-family:"Fira Code",Consolas,monospace}
+@media(max-width:860px){.icon{display:block}.brand span{display:none}#themeBtn{padding:6px 10px}
+#sidebar{position:fixed;left:0;top:60px;z-index:25;transform:translateX(-100%);transition:transform .2s;box-shadow:4px 0 14px rgba(0,0,0,.3)}#sidebar.open{transform:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
